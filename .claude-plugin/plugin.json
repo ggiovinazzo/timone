@@ -1,0 +1,44 @@
+{
+  "name": "timone",
+  "displayName": "Timone",
+  "version": "0.1.0",
+  "description": "Orchestrator agent and knowledge skills (memory, code intelligence, docs lookup, planning, verification) for structured plan-then-build development workflows.",
+  "keywords": ["orchestrator", "memory", "code-intelligence", "documentation", "planning", "verification"],
+  "author": {
+    "name": "Gianluca Giovinazzo"
+  },
+  "defaultEnabled": true,
+  "dependencies": ["engram"],
+  "userConfig": {
+    "context7_api_key": {
+      "type": "string",
+      "title": "Context7 API key",
+      "description": "Optional Context7 API key for higher documentation-lookup rate limits. Leave empty to use the free tier.",
+      "sensitive": true
+    },
+    "orchestrator_model": {
+      "type": "string",
+      "title": "Orchestrator model",
+      "description": "Model used by the top-level orchestrator agent for planning and delegation. Valid values: \"sonnet\", \"opus\", \"haiku\", \"fable\" (family aliases) or a full model id (e.g. \"claude-sonnet-5\"). Family aliases resolve to whatever Anthropic currently recommends for that family and CAN CHANGE on a later release (e.g. \"opus\" has meant different pinned versions over time) — to pin an exact version such as Opus 4.5, Opus 4.6, or Sonnet 4.6 instead of \"whatever sonnet/opus currently means\", type its full model id here (e.g. \"claude-opus-4-6\", \"claude-sonnet-4-6\") rather than the alias. Run `/model` with no argument in a Claude Code session to see the exact model ids available to your account before picking one. No dropdown is available for this field — type the value exactly.",
+      "default": "sonnet"
+    },
+    "coder_model": {
+      "type": "string",
+      "title": "Coding subagent model",
+      "description": "Model used by implementation subagents delegated by the orchestrator. Valid values: \"sonnet\", \"opus\", \"haiku\", \"fable\" (family aliases) or a full model id (e.g. \"claude-haiku-4-5-20251001\"). Family aliases resolve to whatever Anthropic currently recommends for that family and CAN CHANGE on a later release (e.g. \"opus\" has meant different pinned versions over time) — to pin an exact version such as Opus 4.5, Opus 4.6, or Sonnet 4.6 instead of \"whatever sonnet/opus currently means\", type its full model id here (e.g. \"claude-opus-4-6\", \"claude-sonnet-4-6\") rather than the alias. Run `/model` with no argument in a Claude Code session to see the exact model ids available to your account before picking one. No dropdown is available for this field — type the value exactly.",
+      "default": "haiku"
+    },
+    "verifier_model": {
+      "type": "string",
+      "title": "Verifier subagent model",
+      "description": "Model used by the verification subagent delegated by the orchestrator. Valid values: \"sonnet\", \"opus\", \"haiku\", \"fable\" (family aliases) or a full model id (e.g. \"claude-sonnet-5\"). Family aliases resolve to whatever Anthropic currently recommends for that family and CAN CHANGE on a later release (e.g. \"opus\" has meant different pinned versions over time) — to pin an exact version such as Opus 4.5, Opus 4.6, or Sonnet 4.6 instead of \"whatever sonnet/opus currently means\", type its full model id here (e.g. \"claude-opus-4-6\", \"claude-sonnet-4-6\") rather than the alias. Run `/model` with no argument in a Claude Code session to see the exact model ids available to your account before picking one. No dropdown is available for this field — type the value exactly.",
+      "default": "sonnet"
+    },
+    "investigator_model": {
+      "type": "string",
+      "title": "Investigator subagent model",
+      "description": "Model used by the web/document research subagent delegated by the orchestrator. Valid values: \"sonnet\", \"opus\", \"haiku\", \"fable\" (family aliases) or a full model id (e.g. \"claude-sonnet-5\"). Family aliases resolve to whatever Anthropic currently recommends for that family and CAN CHANGE on a later release (e.g. \"opus\" has meant different pinned versions over time) — to pin an exact version such as Opus 4.5, Opus 4.6, or Sonnet 4.6 instead of \"whatever sonnet/opus currently means\", type its full model id here (e.g. \"claude-opus-4-6\", \"claude-sonnet-4-6\") rather than the alias. Run `/model` with no argument in a Claude Code session to see the exact model ids available to your account before picking one. No dropdown is available for this field — type the value exactly.",
+      "default": "sonnet"
+    }
+  }
+}

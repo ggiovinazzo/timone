@@ -1,0 +1,22 @@
+{
+  "name": "timone-marketplace",
+  "description": "Marketplace for the Timone orchestrator plugin and its Engram memory dependency.",
+  "owner": {
+    "name": "Gianluca Giovinazzo"
+  },
+  "plugins": [
+    {
+      "name": "timone",
+      "source": "./",
+      "description": "Orchestrator agent and knowledge skills (memory, code intelligence, docs lookup, planning, verification) for structured plan-then-build development workflows."
+    },
+    {
+      "name": "engram",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/Gentleman-Programming/engram.git"
+      },
+      "description": "Persistent memory MCP plugin used as the reference memory backend for Timone."
+    }
+  ]
+}
